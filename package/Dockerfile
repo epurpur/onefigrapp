@@ -1,7 +1,7 @@
 FROM python:3.6-buster
 
 # update the packages
-RUN apt update
+RUN apt -y update && apt -y upgrade
 
 # Create the run user and group
 RUN addgroup --gid 1000 webservice && adduser -q --uid 1000 --gid 1000 --disabled-login webservice
