@@ -1,4 +1,4 @@
-FROM python:3.6-buster
+FROM public.ecr.aws/docker/library/python:3.6.15-buster
 
 # update the packages
 RUN apt -y update && apt -y upgrade
