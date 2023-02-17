@@ -1,7 +1,7 @@
-FROM public.ecr.aws/docker/library/python:3.6.15-buster
+FROM public.ecr.aws/docker/library/python:3.6.15-slim-bullseye
 
 # update the packages
-RUN apt -y update && apt -y upgrade
+RUN apt-get -y update && apt-get -y upgrade && apt-get -y install gcc libpq-dev
 
 # Create the run user and group
 RUN addgroup --gid 1000 webservice && adduser -q --uid 1000 --gid 1000 --disabled-login webservice
